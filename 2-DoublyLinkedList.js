@@ -95,6 +95,54 @@ class DoublyLinkedList {
     }
     return nextNode;
   }
+  set(index, value) {
+    const node = this.get(index);
+    console.log('index=>', node);
+    if (node) {
+      console.log(node);
+      node.value = value;
+      return true;
+    }
+    return false;
+  }
+  insert(index, value) {
+    const newNode = new Node(value);
+    if (index > this.length || index < -1) {
+      return false;
+    }
+    if (index == 0) {
+      return this.unshift(val);
+    } else if (index == this.length) {
+      return this.push(val);
+    } else {
+      const prevNode = this.get(value - 1);
+      const nextNode = prevNode.next;
+      prevNode.next = newNode;
+      newNode.prev = prevNode;
+      newNode.next = nextNode;
+      nextNode.prev = nextNode;
+    }
+    this.length++;
+    return true;
+  }
+  remove(index) {
+    if (index >= this.length || index < -1) {
+      return false;
+    }
+    if (index == 0) {
+      return this.shift();
+    } else if (index == this.length - 1) {
+      return this.pop();
+    } else {
+      const currentNode = this.get(index);
+      prevNode.next = currentNode.next;
+      nextNode.prev = currentNode.prev;
+      currentNode.next = null;
+      currentNode.prev = null;
+    }
+    this.length--;
+    return true;
+  }
 }
 
 const list = new DoublyLinkedList();
@@ -106,3 +154,13 @@ list.push('you');
 list.push('there!');
 
 console.log(list);
+
+/**
+ * Big O notations of doubly linked lists
+ *
+ * Insertion - o(1)
+ * removal- o(1)
+ * searching- o(n) => technically searching is o(n/2) but that's still o(n)
+ * access- 0(n)
+ *
+ */
