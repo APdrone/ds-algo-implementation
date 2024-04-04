@@ -61,3 +61,41 @@ function factRc(num) {
 }
 
 console.log(factRc(6));
+
+/* Power function */
+
+function power(num, count) {
+  if (count === 0) {
+    return 1;
+  }
+  return num * power(num, count - 1);
+}
+// 2 * 2*1=4
+
+// console.log(power(2, 0)); // 1
+// console.log(power(2, 2)); // 4
+// console.log(power(2, 4)); // 16
+
+/* factorial function */
+
+function factorial(num) {
+  if (num == 0) return 1;
+  return num * factorial(num - 1);
+}
+
+// console.log(factorial(1)); //1
+// console.log(factorial(2)); //2
+// console.log(factorial(4)); //24
+// console.log(factorial(7)); //5040
+
+/* productOfArray function */
+
+function productOfArray(arr) {
+  if (arr.length == 0) {
+    return 1;
+  }
+  return arr[0] * productOfArray(arr.splice(1));
+}
+
+console.log(productOfArray([1, 2, 3])); //6
+console.log(productOfArray([1, 2, 3, 10])); //60
