@@ -88,7 +88,10 @@ function factorial(num) {
 // console.log(factorial(4)); //24
 // console.log(factorial(7)); //5040
 
-/* productOfArray function */
+/**
+ *
+ * Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
+ */
 
 function productOfArray(arr) {
   if (arr.length == 0) {
@@ -99,3 +102,58 @@ function productOfArray(arr) {
 
 console.log(productOfArray([1, 2, 3])); //6
 console.log(productOfArray([1, 2, 3, 10])); //60
+
+/**
+ *
+ *Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to
+ *the function
+ */
+
+function recursiveRange(num) {
+  if (num === 0) return 0;
+  return num + recursiveRange(num - 1);
+}
+
+console.log(recursiveRange(6)); // 21
+console.log(recursiveRange(10)); // 55
+
+/**
+ * Write a recursive function called fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole numbers  1,1, 2, 3, 5, 8, ... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers.
+ */
+
+/* 
+
+i=1 ==> prev=NA,current=NA = 1
+i=2 ==> prev=NA, current=1 = 1
+i=3 ==> prev=1 , current=1 = 2
+i=4 ==> prev=1 , current=2 = 3
+i=4 ==> prev=2 , current=3 = 5
+i=5 ==> prev=3 , current=5 = 8
+
+ */
+
+/* 
+// without recursion
+
+function fib(num) {
+  let sum = 1,
+    current = 0,
+    prev = 0;
+
+  for (let i = 1; i < num; i++) {
+    prev = current;
+    current = sum;
+    sum = prev + current;
+  }
+  return sum;
+} */
+
+function fib(n) {
+  if (n <= 2) return 1;
+  return fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(4)); // 3
+console.log(fib(10)); // 55
+console.log(fib(28)); // 317811
+console.log(fib(35)); // 9227465
