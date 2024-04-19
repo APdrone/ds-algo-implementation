@@ -119,3 +119,38 @@ var runningSum = function (nums) {
 };
 
 runningSum([1, 1, 1, 1]);
+
+/**
+ *
+ * 724. Find Pivot Index
+ *
+ *
+ */
+
+nums = [1, 7, 3, 6, 5, 6];
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var pivotIndex = function (nums) {
+  const leftSum = [0],
+    rightSum = [];
+
+  rightSum[nums.length - 1] = 0;
+  for (let i = 1; i < nums.length; i++) {
+    leftSum[i] = leftSum[i - 1] + nums[i - 1];
+  }
+
+  for (let i = nums.length - 2; i >= 0; i--) {
+    rightSum[i] = rightSum[i + 1] + nums[i + 1];
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (leftSum[i] === rightSum[i]) return i;
+  }
+  return -1;
+};
+
+console.log(pivotIndex(nums));
+console.log(pivotIndex([1, 2, 3]));
