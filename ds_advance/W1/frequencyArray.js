@@ -101,3 +101,34 @@ console.log(maxStrKey, maxStrValue);
 const sInt = s.split('').map((char) => char.charCodeAt(0) - 'a'.charCodeAt(0));
 
 console.log(sInt);
+
+/**
+ * 3005. Count Elements With Maximum Frequency
+ *
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxFrequencyElements = function (nums) {
+  let numObj = {};
+  let max = 0;
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    numObj[nums[i]] = (numObj[nums[i]] || 0) + 1;
+    if (max < numObj[nums[i]]) {
+      max = numObj[nums[i]];
+    }
+  }
+  Object.values(numObj).forEach((value) => {
+    if (value === max) {
+      count += max;
+    }
+  });
+  return count;
+};
+
+console.log(maxFrequencyElements([1, 2, 2, 3, 1, 4]));
+console.log(maxFrequencyElements([1, 2, 3, 4, 5]));
+console.log(maxFrequencyElements([1, 2, 2, 3, 1, 4]));
