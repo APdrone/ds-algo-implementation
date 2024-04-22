@@ -132,3 +132,28 @@ var maxFrequencyElements = function (nums) {
 console.log(maxFrequencyElements([1, 2, 2, 3, 1, 4]));
 console.log(maxFrequencyElements([1, 2, 3, 4, 5]));
 console.log(maxFrequencyElements([1, 2, 2, 3, 1, 4]));
+
+/**
+ *
+ * 1636. Sort Array by Increasing Frequency
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var frequencySort = function (nums) {
+  const numsObj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    numsObj[nums[i]] = (numsObj[nums[i]] || 0) + 1;
+  }
+
+  nums.sort((a, b) => (numsObj[a] === numsObj[b] ? b - a : numsObj[a] - numsObj[b]));
+
+  return nums;
+};
+
+console.log(frequencySort([1, 1, 2, 2, 2, 3]));
+console.log(frequencySort([2, 3, 1, 3, 2]));
+console.log(frequencySort([-1, 1, -6, 4, 5, -6, 1, 4, 1]));

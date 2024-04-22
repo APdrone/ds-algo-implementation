@@ -154,3 +154,65 @@ var pivotIndex = function (nums) {
 
 console.log(pivotIndex(nums));
 console.log(pivotIndex([1, 2, 3]));
+
+/**
+ * 1480. Running Sum of 1d Array
+ *
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function (nums) {
+  const numArr = [];
+
+  numArr[0] = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    numArr[i] = numArr[i - 1] + nums[i];
+  }
+  return numArr;
+};
+
+console.log(runningSum([1, 2, 3, 4]));
+console.log(runningSum([1, 1, 1, 1, 1]));
+console.log(runningSum([3, 1, 2, 10, 1]));
+
+/**
+ *
+ *  Palindrome Number
+ */
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function (x) {};
+
+/**
+ *
+ * Single Number
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function (nums) {
+  const numsObj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    numsObj[nums[i]] = (numsObj[nums[i]] || 0) + 1;
+  }
+
+  for (let [item, keys] of Object.entries(numsObj)) {
+    if (keys == 1) {
+      return item;
+    }
+  }
+};
+
+console.log(singleNumber([2, 2, 1]));
+console.log(singleNumber([4, 1, 2, 1, 2]));
+console.log(singleNumber([1]));
