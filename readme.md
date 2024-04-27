@@ -17,16 +17,27 @@ instead of importing all the libraries we can have(and we will get access to all
 
 it helps in identifying between diferent blocks
 
-
 # cout and endl
 
-by default c++ doesnt add anything so if we want to endline or go to new line , use endl and  /n
+by default c++ doesnt add anything so if we want to endline or go to new line , use endl and /n
 
 use cout<<"Hello World!"<<endl;
-or  cout<<"Hello World!";
+or cout<<"Hello World!";
 
 # I/0 operations
 
 difference between \n and endl ==> endl insert a new line and flush the output stream
- 
+
 and system gets slower because of it, so better to use \n for new line
+
+# data types in C++
+
+> primary data types
+> Derived data types
+> user defined
+
+# conditional statments in C++
+
+### Week 2
+
+# String
