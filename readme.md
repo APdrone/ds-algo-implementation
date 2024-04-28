@@ -41,3 +41,20 @@ and system gets slower because of it, so better to use \n for new line
 ### Week 2
 
 # String
+
+# pointers
+
+![alt text](image.png)
+
+pointers are type of variable that stores address as value
+
+also & and \* has different meaning when used in LHS asnd RHS
+
+& when used in LHS=>refrencce RHS==> adfress of
+
+- when used in LHS=> defining a pointer RHS=> value at operator
+
+int \*ptr=&x; => means pointer to a integer variable
+
+Example:
+![alt text](image-1.png)
