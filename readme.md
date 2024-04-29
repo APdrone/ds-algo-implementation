@@ -58,3 +58,5 @@ int \*ptr=&x; => means pointer to a integer variable
 
 Example:
 ![alt text](image-1.png)
+
+# dynamic allocation
