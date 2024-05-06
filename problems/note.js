@@ -2,5 +2,8 @@
  *
  * 2651. Calculate Delayed Arrival Time
  *
- * 3099. Harshad Number
+ * 242. Valid Anagram
+ *
+ * 290. Word Pattern
+ *
  */
